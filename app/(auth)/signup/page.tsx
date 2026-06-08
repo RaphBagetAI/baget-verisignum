@@ -11,25 +11,39 @@ export default function SignupPage() {
     event.preventDefault();
     setError(null);
     const formData = new FormData(event.currentTarget);
+    const name = formData.get("name") as string;
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
 
-    const result = await authClient.signup({ email, password });
+    const { error } = await authClient.signUp.email({ name, email, password });
 
-    if (result.ok) {
-      router.push("/dashboard");
+    if (error) {
+      setError(error.message || "An unknown error occurred.");
     } else {
-      if (result.error) {
-        setError(result.error.message);
-      } else {
-        setError("An unknown error occurred.");
-      }
+      router.push("/app");
+      router.refresh(); // ensure the page reloads to get user session
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {error && <p className="text-red-500">{error}</p>}
+      <div>
+        <label
+            htmlFor="name"
+            className="block text-sm font-medium text-brand-text"
+        >
+            Full name
+        </label>
+        <input
+            id="name"
+            name="name"
+            type="text"
+            autoComplete="name"
+            required
+            className="w-full px-3 py-2 mt-1 border rounded-md border-brand-primary focus:ring-brand-primary focus:border-brand-primary"
+        />
+      </div>
       <div>
         <label
           htmlFor="email"

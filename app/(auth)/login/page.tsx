@@ -14,16 +14,13 @@ export default function LoginPage() {
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
 
-    const result = await authClient.login({ email, password });
+    const { error } = await authClient.signIn.email({ email, password });
 
-    if (result.ok) {
-      router.push("/dashboard");
+    if (error) {
+      setError(error.message || "An unknown error occurred.");
     } else {
-      if (result.error) {
-        setError(result.error.message);
-      } else {
-        setError("An unknown error occurred.");
-      }
+      router.push("/app");
+      router.refresh(); // ensure the page reloads to get user session
     }
   };
 
