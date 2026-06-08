@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import { auth } from '@/lib/auth';
-import { redirect } from 'next/navigation';
+import { headers } from 'next/headers';
+import LogoutButton from './LogoutButton';
 
 export default async function Header() {
-  // const session = await auth.session();
+  const session = await auth.api.getSession({
+    headers: headers(),
+  }).catch(() => null);
 
   return (
     <header className="bg-white border-b border-gray-200">
@@ -15,23 +18,24 @@ export default async function Header() {
             </Link>
           </div>
           <div className="flex items-center space-x-4">
-            {/* {session ? (
+            {session ? (
               <>
                 <Link href="/app" className="text-sm font-medium text-gray-700 hover:text-gray-900">
                   Dashboard
                 </Link>
-                <form action={async () => {
-                  "use server"
-                  await auth.logout()
-                  redirect("/")
-                }}>
-                  <button type="submit" className="text-sm font-medium text-gray-700 hover:text-gray-900">
-                    Log out
-                  </button>
-                </form>
+                <span className="text-sm text-gray-600 hidden md:inline">
+                  {session.user.email}
+                </span>
+                <LogoutButton />
               </>
-            ) : ( */}
+            ) : (
               <>
+                <Link href="/pricing" className="text-sm font-medium text-gray-700 hover:text-gray-900">
+                  Pricing
+                </Link>
+                <Link href="/faq" className="text-sm font-medium text-gray-700 hover:text-gray-900">
+                  FAQ
+                </Link>
                 <Link href="/login" className="text-sm font-medium text-gray-700 hover:text-gray-900">
                   Log In
                 </Link>
@@ -39,7 +43,7 @@ export default async function Header() {
                   Sign Up
                 </Link>
               </>
-            {/* )} */}
+            )}
           </div>
         </div>
       </nav>
