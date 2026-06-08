@@ -14,6 +14,9 @@ export default function Header() {
             <Link href="/pricing" className="text-base font-medium text-stone-700 hover:text-rose-900 border-b-2 border-transparent hover:border-rose-900 transition-colors">
               Pricing
             </Link>
+            <Link href="/faq" className="text-base font-medium text-stone-700 hover:text-rose-900 border-b-2 border-transparent hover:border-rose-900 transition-colors">
+              FAQ
+            </Link>
             <Link href="#" className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-amber-50 bg-rose-900 hover:bg-stone-700">
               Sign In
             </Link>
