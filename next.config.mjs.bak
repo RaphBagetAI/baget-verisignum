@@ -1,0 +1,10 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    // better-auth + pg load from node_modules at runtime instead of being bundled (webpack
+    // can't bundle better-auth's multi-dialect kysely adapter).
+    serverComponentsExternalPackages: ["better-auth", "pg"],
+  },
+};
+
+export default nextConfig;

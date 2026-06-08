@@ -15,18 +15,20 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Verisignum | Coming Soon",
-  description: "Compliance-First Retainer Billing for Elite Freelancers",
+  title: "Verisignum | Dashboard",
+  description: "Compliance-first subscription billing for elite freelancers.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className={`${libreBaskerville.variable} ${lato.variable}`}>
-      <body className="font-sans">
+    <html lang="en">
+      <body
+        className={`${libreBaskerville.variable} ${lato.variable} font-sans`}
+      >
         {children}
       </body>
     </html>
