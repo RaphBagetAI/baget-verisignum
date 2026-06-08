@@ -8,16 +8,22 @@ export default function HomePage() {
         <p className="mt-4 text-xl text-brand-text max-w-2xl mx-auto">
           Compliance-first subscription billing designed to protect elite freelancers and their clients.
         </p>
-        <div className="mt-8 flex justify-center gap-4">
+        <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
           <Link
             href="/signup"
-            className="px-8 py-3 font-semibold text-white bg-brand-primary rounded-md shadow-md hover:bg-opacity-90 transition-transform transform hover:scale-105"
+            className="w-full sm:w-auto px-8 py-3 font-semibold text-white bg-brand-primary rounded-md shadow-md hover:bg-opacity-90 transition-transform transform hover:scale-105 text-center"
           >
             Get Started
           </Link>
           <Link
+            href="/signup?waitlist=true"
+            className="w-full sm:w-auto px-8 py-3 font-semibold text-white bg-brand-primary/90 rounded-md shadow-md hover:bg-opacity-90 transition-transform transform hover:scale-105 text-center"
+          >
+            Join the Waitlist
+          </Link>
+          <Link
             href="/login"
-            className="px-8 py-3 font-semibold text-brand-primary bg-white border border-brand-primary rounded-md shadow-md hover:bg-gray-50 transition-transform transform hover:scale-105"
+            className="w-full sm:w-auto px-8 py-3 font-semibold text-brand-primary bg-white border border-brand-primary rounded-md shadow-md hover:bg-gray-50 transition-transform transform hover:scale-105 text-center"
           >
             Log In
           </Link>
@@ -46,12 +52,18 @@ export default function HomePage() {
 
       <section className="text-center">
         <h2 className="text-3xl font-bold font-serif text-brand-primary">Ready to Secure Your Retainers?</h2>
-        <div className="mt-6">
-           <Link
+        <div className="mt-6 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <Link
             href="/signup"
-            className="px-10 py-4 text-lg font-semibold text-white bg-brand-primary rounded-md shadow-lg hover:bg-opacity-90 transition-transform transform hover:scale-105"
+            className="w-full sm:w-auto px-10 py-4 text-lg font-semibold text-white bg-brand-primary rounded-md shadow-lg hover:bg-opacity-90 transition-transform transform hover:scale-105 text-center"
           >
-            Create Your Account
+            Get Started
+          </Link>
+          <Link
+            href="/signup?waitlist=true"
+            className="w-full sm:w-auto px-10 py-4 text-lg font-semibold text-brand-primary bg-white border border-brand-primary rounded-md shadow-lg hover:bg-gray-50 transition-transform transform hover:scale-105 text-center"
+          >
+            Join the Waitlist
           </Link>
         </div>
       </section>

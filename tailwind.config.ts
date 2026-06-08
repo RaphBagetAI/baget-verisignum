@@ -13,6 +13,8 @@ const config: Config = {
         'brand-text': '#4A3728',
         'brand-accent': '#6B2D3E',
         'brand-accent-light': '#B69AA7',
+        'brand-primary': '#6B2D3E',
+        'brand-secondary': '#4A3728',
       },
       fontFamily: {
         serif: ['var(--font-libre-baskerville)', 'serif'],
