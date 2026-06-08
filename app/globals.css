@@ -1,57 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Lato:wght@400;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 41 50% 93%; /* #F4ECD8 */
-    --foreground: 25 25% 22%; /* #4A3728 */
-
-    --card: 0 0% 100%;
-    --card-foreground: 25 25% 22%;
- 
-    --popover: 0 0% 100%;
-    --popover-foreground: 25 25% 22%;
- 
-    --primary: 345 42% 30%; /* #6B2D3E */
-    --primary-foreground: 41 50% 93%;
- 
-    --secondary: 60 4.8% 95.9%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
- 
-    --muted: 60 4.8% 95.9%;
-    --muted-foreground: 215.4 16.3% 46.9%;
- 
-    --accent: 327 16% 66%; /* #B69AA7 */
-    --accent-foreground: 222.2 47.4% 11.2%;
- 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 60 9.1% 97.8%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 345 42% 30%;
- 
-    --radius: 0.5rem;
-  }
- 
-  .dark {
-    /* Define dark mode colors if needed later */
-  }
-}
- 
-@layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-brand-background text-brand-text;
-    font-family: var(--font-lato), sans-serif;
+    @apply bg-brand-background text-brand-text font-sans;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif text-brand-primary;
+    @apply font-serif text-brand-accent;
   }
 }
-

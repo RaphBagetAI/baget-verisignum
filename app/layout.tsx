@@ -15,8 +15,8 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Verisignum | Dashboard",
-  description: "Compliance-first subscription billing for elite freelancers.",
+  title: "Verisignum | Compliance-First Retainer Billing for Elite Freelancers",
+  description: "A simple SaaS where freelancers track their client invoices, clients sign up and pay a monthly retainer online, and everyone gets email receipts.",
 };
 
 export default function RootLayout({
